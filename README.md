@@ -3,9 +3,8 @@
 Repositorio donde enocntraras todo el material necesrio para seguir y hacer los workshops que se impartirán en la NetCoreConf Virtual 2  
 
 ## Workshops 
-___ 
 
-1- [The k8s Workshop](/K8S) por:  [Carlos Mendible](https://twitter.com/cmendibl3) y [Carlos Landeras](https://twitter.com/Carlos_Lande/) 
+1- [The k8s Workshop](/k8s) por:  [Carlos Mendible](https://twitter.com/cmendibl3) y [Carlos Landeras](https://twitter.com/Carlos_Lande/) 
 
 In this workshop you'll learn how to deploy, monitor, scale, secure and debug workloads in AKS:
 - Deploy an aplication.
