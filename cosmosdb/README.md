@@ -1,0 +1,1 @@
+# First steps in Cosmos DB
