@@ -8,6 +8,9 @@
 ### Temario 
 
 1 - [Creando Cosmos DB en Azure](init)
+
 2 - [Querying & indexing in Cosmos DB](queryng)
+
 3 - [Importar Datos en Azure CososDB con Azure Data Factory](datafactory)
+
 4 - [Usando el SDK de Cosmos DB con .NET](projectNet)
