@@ -180,6 +180,55 @@ A continuación de las lineas anteriores añadimos el siguiente trzo de código:
 ```csharp  
 string queryWithPartitionKey = "SELECT * FROM avengers a WHERE a.type = 'collection' and IS_DEFINED(a.description) and IS_DEFINED(a.startYear)";
 
+            FeedIterator<AvengersModel> query = container.GetItemQueryIterator<AvengersModel>(new QueryDefinition(queryWithPartitionKey), requestOptions: new QueryRequestOptions{MaxConcurrency = 1});
+            foreach (AvengersModel avengerModel in await query.ReadNextAsync())
+            {
+                await Console.Out.WriteLineAsync($"{avengerModel.id} by {avengerModel.title}");
+                foreach (Item creator in avenger.creators.items)
+                {
+                    await Console.Out.WriteLineAsync($"\t{creator.name} {creator.role}");
+                }
+                await Console.Out.WriteLineAsync();
+            }
+
+```  
+Ahora compilamos y ejectamos, para ello ejecutamos en el terminal:  
+> dotnet build  
+> dotnet run 
+
+El resultado obtenido debe ser similar a:  
+> Title:  Superior Spider-Man Vol. 2: Otto-matic (2019)  
+>26024 by  Superior Spider-Man Vol. 2: Otto-matic (2019)  
+>        Christos Gage writer  
+>        Mike Hawthorne penciller (cover)  
+>        Lan Medina penciller  
+>        Jeff Youngquist editor  
+>
+>20293 by 1602 Witch Hunter Angela (2016)  
+>        Christos Gage writer  
+>        Mike Hawthorne penciller (cover)  
+>        Lan Medina penciller  
+>        Jeff Youngquist editor  
+
+Si quisieramos ejecutar la query por múltiples partitions key lo único que hay que hacer es eliminar el a.type = "collection"  de la anterior query, quedando:  
+
+```csharp  
+string queryWithPartitionKey = "SELECT * FROM avengers a WHERE  IS_DEFINED(a.description) and IS_DEFINED(a.startYear)";
+
+            FeedIterator<AvengersModel> query = container.GetItemQueryIterator<AvengersModel>(new QueryDefinition(queryWithPartitionKey), requestOptions: new QueryRequestOptions{MaxConcurrency = 1});
+            foreach (AvengersModel avengerModel in await query.ReadNextAsync())
+            {
+                await Console.Out.WriteLineAsync($"{avengerModel.id} by {avengerModel.title}");
+                foreach (Item creator in avenger.creators.items)
+                {
+                    await Console.Out.WriteLineAsync($"\t{creator.name} {creator.role}");
+                }
+                await Console.Out.WriteLineAsync();
+            }
+
+``` 
+
+Si ejecutamos obtenemos todas las ntradas que tengamos en el Cosomos DB.
 
 
 
