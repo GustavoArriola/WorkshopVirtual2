@@ -173,6 +173,12 @@ ItemResponse<AvengersModel> avengerResponse = await container.ReadItemAsync<Aven
 > dotnet build  
 > dotnet run 
 
+## Ejecutando una Query SQL contra una partition  
+
+A continuación de las lineas anteriores añadimos el siguiente trzo de código:  
+
+```csharp  
+string queryWithPartitionKey = "SELECT * FROM avengers a WHERE a.type = 'collection' and IS_DEFINED(a.description) and IS_DEFINED(a.startYear)";
 
 
 
