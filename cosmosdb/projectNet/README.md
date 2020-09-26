@@ -4,7 +4,7 @@ Una vez hecha la introducción a Cosmos DB a través del portal vamos a aprender
 
 ## Creando el poryecto  
 
-1- En la carpeta donde querias contruir el lab abrir Visual Studio Code, para ello abrir la consola en el directorio desaado y ejecutar:   
+1- En la carpeta donde querias construir el lab abrir Visual Studio Code, para ello abrir la consola en el directorio desaado y ejecutar:   
 > code .  
 
 2- Abrir el terminal de vscode: 
@@ -12,6 +12,7 @@ Una vez hecha la introducción a Cosmos DB a través del portal vamos a aprender
 
 3 - Creamos el proyecto de consola:  
 > dotnet new console -o "netcoreconfvirtualworkshop"  
+> cd netcoreconfvirtualworkshop
 
 ![Creación del proyecto](assets/createproject.png)
 
