@@ -11,8 +11,6 @@
 
 2 - [Querying & indexing in Cosmos DB](queryng)
 
-3 - [Importar Datos en Azure CososDB con Azure Data Factory](datafactory)
+3 - [Usando el SDK de Cosmos DB con .NET](projectNet)  
 
-4 - [Usando el SDK de Cosmos DB con .NET](projectNet)  
-
-5 - [Introducción a Change Feed](changeFeed)
+4 - [Introducción a Change Feed](changeFeed)
