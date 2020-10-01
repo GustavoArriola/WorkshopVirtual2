@@ -17,9 +17,9 @@ Empecemos usando querys "basicas" con las cláusulas SELECT, WHERE y FROM
 2. En la sección de Data Explorer/ Explorador de Datos, expandemos el nodo de marvel, seleccionamos el contenedor series 
 3. En el nodo de "series" seleccionamo la opcion de Items
 4. Ahora vemos todos los elementos que tiene el contenedor. Observamos todas las propiedades que tiene cada documentos, incluido los arrays
-![items marvel](/images/ItemsMarvel.PNG)
+![items marvel](images/ItemsMarvel.PNG)
 5. Seleccionamos New SQL Query
-![NewSqlQuery](/images/NewSqlQuery.PNG)
+![NewSqlQuery](images/NewSqlQuery.PNG)
 6. Pegamos la siguiente intruccion SQL y ejecutamos la Consulta
 ```sql
 SELECT * FROM c
